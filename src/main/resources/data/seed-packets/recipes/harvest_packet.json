@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "WB",
+    "BC",
+    "WC"
+  ],
+  "key": {
+    "W": { "item": "minecraft:wheat_seeds" },
+    "B": { "item": "minecraft:beetroot_seeds" },
+    "C": { "item": "minecraft:carrot" }
+  },
+  "result": {
+    "item": "seed-packets:harvest_packet",
+    "count": 5
+  }
+}
