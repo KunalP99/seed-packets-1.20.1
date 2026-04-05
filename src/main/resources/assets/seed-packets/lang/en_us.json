@@ -1,4 +1,6 @@
 {
+  "itemGroup.seed-packets.seed_packets": "Seed Packets",
+
   "item.seed-packets.wheatroot_packet": "Wheatroot Packet",
   "item.seed-packets.pumpkin_melon_packet": "Pumpkin Melon Packet",
   "item.seed-packets.harvest_packet": "Harvest Packet",

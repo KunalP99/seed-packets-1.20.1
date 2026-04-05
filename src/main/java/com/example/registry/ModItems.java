@@ -2,12 +2,17 @@ package com.example.registry;
 
 import com.example.SeedPackets;
 import com.example.item.SeedPacketItem;
+import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.FoodComponent;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 public class ModItems {
@@ -93,5 +98,28 @@ public class ModItems {
         register("harvest_packet", HARVEST_PACKET);
         register("golden_spud_packet", GOLDEN_SPUD_PACKET);
         register("supreme_harvest_packet", SUPREME_HARVEST_PACKET);
+
+        // Custom creative tab
+        Registry.register(Registries.ITEM_GROUP,
+                new Identifier(SeedPackets.MOD_ID, "seed_packets"),
+                FabricItemGroup.builder()
+                        .displayName(Text.translatable("itemGroup.seed-packets.seed_packets"))
+                        .icon(() -> new ItemStack(SUPREME_HARVEST_PACKET))
+                        .entries((context, entries) -> {
+                            // Tier 1 packets + food
+                            entries.add(WHEATROOT_PACKET);
+                            entries.add(WHEATROOT);
+                            entries.add(PUMPKIN_MELON_PACKET);
+                            entries.add(PUMPKIN_MELON);
+                            // Tier 2 packets + food
+                            entries.add(HARVEST_PACKET);
+                            entries.add(HARVEST_CROP);
+                            entries.add(GOLDEN_SPUD_PACKET);
+                            entries.add(GOLDEN_SPUD);
+                            // Tier 3 packet + food
+                            entries.add(SUPREME_HARVEST_PACKET);
+                            entries.add(SUPREME_HARVEST);
+                        })
+                        .build());
     }
 }
