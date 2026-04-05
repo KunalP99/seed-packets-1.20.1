@@ -3,7 +3,9 @@ package com.example.item;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
@@ -40,7 +42,17 @@ public class SeedPacketItem extends Item {
 
         if (!world.isClient) {
             world.setBlockState(above, cropBlock.getDefaultState());
-            context.getStack().decrement(1);
+            ItemStack stack = context.getStack();
+            PlayerEntity player = context.getPlayer();
+            if (player != null) {
+                stack.damage(1, player, p -> p.sendToolBreakStatus(context.getHand()));
+            } else {
+                // Fallback for non-player use
+                stack.setDamage(stack.getDamage() + 1);
+                if (stack.getDamage() >= stack.getMaxDamage()) {
+                    stack.decrement(1);
+                }
+            }
         }
 
         return ActionResult.SUCCESS;

@@ -8,13 +8,13 @@ Seed Packets lets you combine vanilla seeds at a crafting table to create **seed
 
 ## How it works
 
-1. **Craft a seed packet** using the recipes below — each craft gives you **5 packets**
-2. **Plant the packet** by right-clicking on farmland — one packet is consumed per planting
+1. **Craft a seed packet** using the recipes below — each craft gives you **1 packet with 5 uses**
+2. **Plant the packet** by right-clicking on farmland — each use plants one crop and damages the packet by 1
 3. **Wait for the crop to grow** through 8 stages (stage 0 → stage 7). Bone meal works to speed it up
 4. **Break the fully grown crop** (stage 7) to harvest 1–2 food items
 5. **Eat the food** to restore hunger and gain a timed potion effect
 
-> The number shown on the packet item is your **uses remaining**. Once it reaches 0, the packet disappears.
+> The **durability bar** on the packet shows uses remaining. After 5 plantings the packet breaks and disappears.
 > Breaking a crop before it is fully grown drops **nothing** — wait for stage 7.
 
 ---
@@ -33,7 +33,7 @@ There are 3 tiers. Higher tiers use more seed types and give stronger food effec
 
 ## Recipes
 
-All recipes are **shaped** and produce **5 packets**.
+All recipes are **shaped** and produce **1 packet with 5 uses**.
 
 ---
 
