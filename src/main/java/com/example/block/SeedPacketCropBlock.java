@@ -11,7 +11,7 @@ public class SeedPacketCropBlock extends CropBlock {
     }
 
     @Override
-    protected ItemConvertible getSeedItem() {
+    protected ItemConvertible getSeedsItem() {
         // Planting is handled exclusively by SeedPacketItem.useOnBlock.
         // Returning wheat seeds here satisfies the abstract method and
         // prevents players from placing this crop by any other means.
