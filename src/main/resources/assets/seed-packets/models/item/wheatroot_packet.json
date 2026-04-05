@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "seed-packets:item/wheatroot_packet"
+  }
+}
