@@ -1,5 +1,6 @@
 package com.example;
 
+import com.example.recipe.ModRecipes;
 import com.example.registry.ModBlocks;
 import com.example.registry.ModItems;
 import net.fabricmc.api.ModInitializer;
@@ -14,6 +15,7 @@ public class SeedPackets implements ModInitializer {
 	public void onInitialize() {
 		ModBlocks.register();
 		ModItems.register();
+		ModRecipes.register();
 		LOGGER.info("Seed Packets mod initialized.");
 	}
 }

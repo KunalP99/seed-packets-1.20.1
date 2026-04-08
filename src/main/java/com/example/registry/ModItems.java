@@ -62,19 +62,19 @@ public class ModItems {
     // -------------------------------------------------------------------------
 
     public static final SeedPacketItem WHEATROOT_PACKET =
-            new SeedPacketItem(ModBlocks.WHEATROOT_CROP, new Item.Settings().maxDamage(5));
+            new SeedPacketItem(ModBlocks.WHEATROOT_CROP, new Item.Settings().maxCount(1));
 
     public static final SeedPacketItem PUMPKIN_MELON_PACKET =
-            new SeedPacketItem(ModBlocks.PUMPKIN_MELON_CROP, new Item.Settings().maxDamage(5));
+            new SeedPacketItem(ModBlocks.PUMPKIN_MELON_CROP, new Item.Settings().maxCount(1));
 
     public static final SeedPacketItem HARVEST_PACKET =
-            new SeedPacketItem(ModBlocks.HARVEST_CROP, new Item.Settings().maxDamage(5));
+            new SeedPacketItem(ModBlocks.HARVEST_CROP, new Item.Settings().maxCount(1));
 
     public static final SeedPacketItem GOLDEN_SPUD_PACKET =
-            new SeedPacketItem(ModBlocks.GOLDEN_SPUD_CROP, new Item.Settings().maxDamage(5));
+            new SeedPacketItem(ModBlocks.GOLDEN_SPUD_CROP, new Item.Settings().maxCount(1));
 
     public static final SeedPacketItem SUPREME_HARVEST_PACKET =
-            new SeedPacketItem(ModBlocks.SUPREME_HARVEST_CROP, new Item.Settings().maxDamage(5));
+            new SeedPacketItem(ModBlocks.SUPREME_HARVEST_CROP, new Item.Settings().maxCount(1));
 
     // -------------------------------------------------------------------------
     // Registration
