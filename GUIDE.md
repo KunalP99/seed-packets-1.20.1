@@ -40,7 +40,7 @@ There are 3 custom tiers plus a special Scatter Packet.
 | 2 | Harvest | 3 types | 5 | Regeneration I (12s) |
 | 2 | Golden Spud | 3 types | 5 | Strength I (12s) |
 | 3 | Supreme Harvest | 4 types | 7 | Speed II (15s) + Strength I (10s) |
-| — | Ultimate | all 6 vanilla seeds | — | Plants a random vanilla crop |
+| — | Scatter | all 6 vanilla seeds | — | Plants a random vanilla crop |
 
 ---
 
