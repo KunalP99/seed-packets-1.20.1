@@ -66,6 +66,22 @@ public class SeedStorageItem extends Item {
     }
 
     @Override
+    public Text getName(ItemStack stack) {
+        String seedType = getStoredSeed(stack);
+        if (seedType == null || seedType.isEmpty() || getSeedCount(stack) <= 0) {
+            return super.getName(stack); // "Empty Storage Packet" etc.
+        }
+        Item seedItem = Registries.ITEM.get(Identifier.tryParse(seedType));
+        MutableText seedName = new ItemStack(seedItem).getName().copy();
+        // Mod seed packets already end in "Packet" — use their name as-is.
+        // Vanilla seeds get " Packet" appended (e.g. "Wheat Seeds Packet").
+        if (seedItem instanceof SeedPacketItem) {
+            return seedName;
+        }
+        return seedName.append(" Packet");
+    }
+
+    @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         String seedType = getStoredSeed(stack);
         int count = getSeedCount(stack);
