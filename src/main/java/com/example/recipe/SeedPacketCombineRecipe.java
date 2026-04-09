@@ -1,7 +1,7 @@
 package com.example.recipe;
 
 import com.example.item.SeedPacketItem;
-import net.minecraft.inventory.CraftingInventory;
+import net.minecraft.inventory.RecipeInputInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.SpecialCraftingRecipe;
@@ -17,7 +17,7 @@ public class SeedPacketCombineRecipe extends SpecialCraftingRecipe {
     }
 
     @Override
-    public boolean matches(CraftingInventory inventory, World world) {
+    public boolean matches(RecipeInputInventory inventory, World world) {
         ItemStack first = ItemStack.EMPTY;
         ItemStack second = ItemStack.EMPTY;
 
@@ -39,7 +39,7 @@ public class SeedPacketCombineRecipe extends SpecialCraftingRecipe {
     }
 
     @Override
-    public ItemStack craft(CraftingInventory inventory, DynamicRegistryManager registryManager) {
+    public ItemStack craft(RecipeInputInventory inventory, DynamicRegistryManager registryManager) {
         ItemStack first = ItemStack.EMPTY;
         ItemStack second = ItemStack.EMPTY;
 
