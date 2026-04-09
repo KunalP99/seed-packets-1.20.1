@@ -1,8 +1,9 @@
 package com.example.registry;
 
 import com.example.SeedPackets;
-import com.example.item.SeedPacketItem;
 import com.example.item.ScatterPacketItem;
+import com.example.item.SeedPacketItem;
+import com.example.item.SeedStorageItem;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -81,6 +82,22 @@ public class ModItems {
             new ScatterPacketItem(new Item.Settings().maxCount(1));
 
     // -------------------------------------------------------------------------
+    // Seed storage packets (tiered capacity)
+    // -------------------------------------------------------------------------
+
+    public static final SeedStorageItem EMPTY_STORAGE_PACKET =
+            new SeedStorageItem(100, new Item.Settings().maxCount(1));
+
+    public static final SeedStorageItem REINFORCED_STORAGE_PACKET =
+            new SeedStorageItem(200, new Item.Settings().maxCount(1));
+
+    public static final SeedStorageItem FORTIFIED_STORAGE_PACKET =
+            new SeedStorageItem(300, new Item.Settings().maxCount(1));
+
+    public static final SeedStorageItem SUPREME_STORAGE_PACKET =
+            new SeedStorageItem(500, new Item.Settings().maxCount(1));
+
+    // -------------------------------------------------------------------------
     // Registration
     // -------------------------------------------------------------------------
 
@@ -104,6 +121,12 @@ public class ModItems {
         register("supreme_harvest_packet", SUPREME_HARVEST_PACKET);
         register("scatter_packet", SCATTER_PACKET);
 
+        // Seed storage packets
+        register("empty_storage_packet", EMPTY_STORAGE_PACKET);
+        register("reinforced_storage_packet", REINFORCED_STORAGE_PACKET);
+        register("fortified_storage_packet", FORTIFIED_STORAGE_PACKET);
+        register("supreme_storage_packet", SUPREME_STORAGE_PACKET);
+
         // Custom creative tab
         Registry.register(Registries.ITEM_GROUP,
                 new Identifier(SeedPackets.MOD_ID, "seed_packets"),
@@ -126,6 +149,11 @@ public class ModItems {
                             entries.add(SUPREME_HARVEST);
                             // Scatter packet
                             entries.add(SCATTER_PACKET);
+                            // Seed storage packets
+                            entries.add(EMPTY_STORAGE_PACKET);
+                            entries.add(REINFORCED_STORAGE_PACKET);
+                            entries.add(FORTIFIED_STORAGE_PACKET);
+                            entries.add(SUPREME_STORAGE_PACKET);
                         })
                         .build());
     }

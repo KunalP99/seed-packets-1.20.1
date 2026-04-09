@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "DDD",
+    "DPD",
+    "DDD"
+  ],
+  "key": {
+    "D": { "item": "minecraft:diamond" },
+    "P": { "item": "seed-packets:fortified_storage_packet" }
+  },
+  "result": {
+    "item": "seed-packets:supreme_storage_packet",
+    "count": 1
+  }
+}

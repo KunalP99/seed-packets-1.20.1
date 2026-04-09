@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "IPI",
+    "III"
+  ],
+  "key": {
+    "I": { "item": "minecraft:iron_ingot" },
+    "P": { "item": "seed-packets:empty_storage_packet" }
+  },
+  "result": {
+    "item": "seed-packets:reinforced_storage_packet",
+    "count": 1
+  }
+}

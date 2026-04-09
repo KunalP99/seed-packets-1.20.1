@@ -14,6 +14,11 @@
   "item.seed-packets.golden_spud": "Golden Spud",
   "item.seed-packets.supreme_harvest": "Supreme Harvest",
 
+  "item.seed-packets.empty_storage_packet": "Empty Storage Packet",
+  "item.seed-packets.reinforced_storage_packet": "Reinforced Storage Packet",
+  "item.seed-packets.fortified_storage_packet": "Fortified Storage Packet",
+  "item.seed-packets.supreme_storage_packet": "Supreme Storage Packet",
+
   "block.seed-packets.wheatroot_crop": "Wheatroot Crop",
   "block.seed-packets.vinebloom_crop": "Vinebloom Crop",
   "block.seed-packets.harvest_crop": "Harvest Crop",

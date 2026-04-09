@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PSP",
+    "S S",
+    "PSP"
+  ],
+  "key": {
+    "P": { "item": "minecraft:paper" },
+    "S": { "item": "minecraft:string" }
+  },
+  "result": {
+    "item": "seed-packets:empty_storage_packet",
+    "count": 1
+  }
+}

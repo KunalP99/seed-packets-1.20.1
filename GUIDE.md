@@ -141,6 +141,42 @@ Each use plants a **random vanilla crop** on farmland — could be wheat, carrot
 
 ---
 
+## Seed Storage Packets
+
+Store large quantities of vanilla seeds in a single inventory slot.
+
+### Tiers
+
+| Item | Capacity | Recipe |
+|---|---|---|
+| Empty Storage Packet | 100 seeds | Paper + String (see below) |
+| Reinforced Storage Packet | 200 seeds | Surround Empty with 8 iron ingots |
+| Fortified Storage Packet | 300 seeds | Surround Reinforced with 8 gold ingots |
+| Supreme Storage Packet | 500 seeds | Surround Fortified with 8 diamonds |
+
+Base craft:
+```
+P S P
+S   S    P = Paper, S = String
+P S P
+```
+
+### Accepted seeds
+Wheat Seeds, Beetroot Seeds, Pumpkin Seeds, Melon Seeds, Carrot, Potato.
+
+### Filling
+Place the storage packet + any number of same-type seeds in the crafting grid. Each seed slot adds 1 seed to the packet per craft. The packet appears in the output slot with an updated count.
+
+If the packet already contains seeds, you can only add the same type.
+
+### Emptying
+Place the storage packet alone in the crafting grid. Up to 64 seeds are returned to the output slot; the packet (with any remaining seeds) comes back as a remainder. Repeat to fully empty it.
+
+### Tooltip
+Hovering over a storage packet shows: `Seed Name: N / Capacity` (or `Empty` if nothing is stored).
+
+---
+
 ## Tips
 
 - All crops need **farmland** (hoed dirt near water) and **light** to grow, just like vanilla crops
