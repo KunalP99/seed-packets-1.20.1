@@ -17,6 +17,8 @@ Seed Packets lets you combine vanilla seeds at a crafting table to create **seed
 
 > Breaking a crop before it is fully grown drops **nothing** — wait for stage 7.
 
+> **Vinebloom is different** — see the Vinebloom section below for its melon-style behaviour.
+
 ---
 
 ## Uses & Combining Packets
@@ -68,9 +70,17 @@ Custom tier 1–3 packet recipes produce **1 packet with 5 uses**. The Scatter P
 [Pumpkin Seeds][Pumpkin Seeds][Pumpkin Seeds]
 [ Melon Seeds ][ Melon Seeds ][ Melon Seeds ]
 ```
-- **Grows:** Vinebloom Crop
-- **Harvest:** Vinebloom (1–2)
+- **Grows:** Vinebloom Stem (melon-style — see below)
+- **Harvest:** Vinebloom (1–2) from the fruit block
 - **Food effect:** +4 hunger | Jump Boost I for 12 seconds
+
+**Vinebloom works differently from other packets:**
+- The packet plants a **stem** on farmland (1 use per plant)
+- The stem grows through 8 stages; when fully grown it **randomly spawns a Vinebloom fruit block** on an adjacent solid tile (farmland, dirt, grass, etc.)
+- **Break the fruit** to get 1–2 Vinebloom food — no uses are returned
+- The stem stays planted and will grow a new fruit over time
+- **Break the stem** to uproot it — returns **1 use** to your packet
+- Bone meal on the stem advances growth; bone meal on a mature stem spawns the fruit immediately
 
 ---
 
