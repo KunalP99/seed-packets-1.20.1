@@ -204,3 +204,9 @@ Hovering over a storage packet shows: `Seed Name: N / Capacity` (or `Empty` if n
 - The Scatter Packet is great for large farms where you don't mind a mix of vanilla crops
 - Supreme Harvest is the strongest food in the mod — save it for combat or tough situations
 - All packets and their food items can be found in the **Seed Packets** creative tab
+
+---
+
+## Recommended Mods
+
+- **Model Gap Fix** — fixes visual gaps that can appear in item textures when held in hand, caused by a quirk in Minecraft's generated item model rendering. Highly recommended alongside this mod.
