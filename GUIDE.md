@@ -22,9 +22,9 @@ Seed Packets lets you combine vanilla seeds at a crafting table to create **seed
 ## Uses & Combining Packets
 
 - Each packet starts with **5 uses**
-- A packet can hold up to **100 uses**
+- A packet can hold up to **64 uses**
 - **Combine two packets of the same type** in any crafting grid to merge their uses — place both packets anywhere in the grid and take the result
-- If the combined total would exceed 100, the overflow is **discarded** (e.g. a 98-use packet + a 5-use packet = a 100-use packet)
+- If the combined total would exceed 64, the overflow is **discarded** (e.g. a 62-use packet + a 5-use packet = a 64-use packet)
 - The number of uses remaining is always shown in the item tooltip
 
 ---
@@ -146,7 +146,7 @@ Each use plants a **random vanilla crop** on farmland — could be wheat, carrot
 - All crops need **farmland** (hoed dirt near water) and **light** to grow, just like vanilla crops
 - **Bone meal** can be used on any seed packet crop to skip growth stages
 - Crops drop **nothing** if broken early — always wait for stage 7
-- **Combine packets** to stockpile uses — a maxed-out 100-use packet is far more inventory-efficient than 20 separate packets
+- **Combine packets** to stockpile uses — a maxed-out 64-use packet is far more inventory-efficient than 20 separate packets
 - The Scatter Packet is great for large farms where you don't mind a mix of vanilla crops
 - Supreme Harvest is the strongest food in the mod — save it for combat or tough situations
 - All packets and their food items can be found in the **Seed Packets** creative tab

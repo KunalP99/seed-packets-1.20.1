@@ -23,7 +23,7 @@ import java.util.List;
 public class SeedPacketItem extends Item {
 
     public static final int DEFAULT_USES = 5;
-    public static final int MAX_USES = 100;
+    public static final int MAX_USES = 64;
     private static final String USES_KEY = "SeedUses";
 
     private final Block cropBlock;
