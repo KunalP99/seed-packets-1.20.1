@@ -12,7 +12,7 @@ Seed Packets lets you combine vanilla seeds at a crafting table to create **seed
 2. **Plant the packet** by right-clicking on farmland — each use plants one crop
 3. **Check your remaining uses** by hovering over the packet — the tooltip shows "X uses left"
 4. **Wait for the crop to grow** through 8 stages (stage 0 → stage 7). Bone meal works to speed it up
-5. **Break the fully grown crop** (stage 7) to harvest 1–2 food items and **1 seed packet with 1 use** for replanting
+5. **Break the fully grown crop** (stage 7) to harvest 1–2 food items and **1–4 uses returned** to your seed packet
 6. **Eat the food** to restore hunger and gain a timed potion effect
 
 > Breaking a crop before it is fully grown drops **nothing** — wait for stage 7.
@@ -146,7 +146,7 @@ Each use plants a **random vanilla crop** on farmland — could be wheat, carrot
 - All crops need **farmland** (hoed dirt near water) and **light** to grow, just like vanilla crops
 - **Bone meal** can be used on any seed packet crop to skip growth stages
 - Crops drop **nothing** if broken early — always wait for stage 7
-- A fully grown crop always drops a **1-use packet** — you can always replant without going back to the crafting table, but you still need to craft to build up uses
+- A fully grown crop returns **1–4 random uses** to your packet — you can sustain your farm without crafting, though you'll still need to craft to build up a stockpile
 - **Combine packets** to stockpile uses — dump a stack of fresh 5-use packets into the crafting grid at once to get a single combined packet
 - The Scatter Packet is great for large farms where you don't mind a mix of vanilla crops
 - Supreme Harvest is the strongest food in the mod — save it for combat or tough situations
