@@ -46,7 +46,7 @@ There are 3 custom tiers plus a special Ultimate packet.
 
 ## Recipes
 
-All custom packet recipes produce **1 packet with 5 uses**.
+Custom tier 1–3 packet recipes produce **1 packet with 5 uses**. The Ultimate Seed Packet starts with **15 uses**.
 
 ---
 

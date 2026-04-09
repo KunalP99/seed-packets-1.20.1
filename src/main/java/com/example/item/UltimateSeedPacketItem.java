@@ -3,6 +3,7 @@ package com.example.item;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
 import net.minecraft.sound.SoundCategory;
@@ -27,6 +28,11 @@ public class UltimateSeedPacketItem extends SeedPacketItem {
 
     public UltimateSeedPacketItem(Settings settings) {
         super(Blocks.WHEAT, settings); // cropBlock unused — useOnBlock is overridden
+    }
+
+    @Override
+    public void onCraft(ItemStack stack, World world, PlayerEntity player) {
+        setUses(stack, 15);
     }
 
     @Override
