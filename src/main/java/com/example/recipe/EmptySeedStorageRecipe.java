@@ -52,7 +52,7 @@ public class EmptySeedStorageRecipe extends SpecialCraftingRecipe {
 
     // Returns the storage packet back to its slot, with remaining seeds (or empty if fully drained).
     @Override
-    public DefaultedList<ItemStack> getRemainingStacks(RecipeInputInventory inventory) {
+    public DefaultedList<ItemStack> getRemainder(RecipeInputInventory inventory) {
         DefaultedList<ItemStack> remainders = DefaultedList.ofSize(inventory.size(), ItemStack.EMPTY);
 
         for (int i = 0; i < inventory.size(); i++) {
