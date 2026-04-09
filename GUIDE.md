@@ -31,7 +31,7 @@ Seed Packets lets you combine vanilla seeds at a crafting table to create **seed
 
 ## Progression Tiers
 
-There are 3 custom tiers plus a special Ultimate packet.
+There are 3 custom tiers plus a special Scatter Packet.
 
 | Tier | Packet | Seeds used | Hunger | Effect |
 |------|--------|-----------|--------|--------|
@@ -46,7 +46,7 @@ There are 3 custom tiers plus a special Ultimate packet.
 
 ## Recipes
 
-Custom tier 1–3 packet recipes produce **1 packet with 5 uses**. The Ultimate Seed Packet starts with **15 uses**.
+Custom tier 1–3 packet recipes produce **1 packet with 5 uses**. The Scatter Packet starts with **15 uses**.
 
 ---
 
@@ -114,9 +114,9 @@ Custom tier 1–3 packet recipes produce **1 packet with 5 uses**. The Ultimate 
 
 ---
 
-### Ultimate
+### Scatter
 
-#### Ultimate Seed Packet
+#### Scatter Packet
 **Shapeless recipe** — place all 6 ingredients anywhere in the crafting grid:
 - Wheat Seeds
 - Melon Seeds
@@ -147,6 +147,6 @@ Each use plants a **random vanilla crop** on farmland — could be wheat, carrot
 - **Bone meal** can be used on any seed packet crop to skip growth stages
 - Crops drop **nothing** if broken early — always wait for stage 7
 - **Combine packets** to stockpile uses — a maxed-out 100-use packet is far more inventory-efficient than 20 separate packets
-- The Ultimate Seed Packet is great for large farms where you don't mind a mix of vanilla crops
+- The Scatter Packet is great for large farms where you don't mind a mix of vanilla crops
 - Supreme Harvest is the strongest food in the mod — save it for combat or tough situations
 - All packets and their food items can be found in the **Seed Packets** creative tab

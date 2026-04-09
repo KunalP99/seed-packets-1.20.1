@@ -15,7 +15,7 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class UltimateSeedPacketItem extends SeedPacketItem {
+public class ScatterPacketItem extends SeedPacketItem {
 
     private static final List<Block> VANILLA_CROPS = List.of(
             Blocks.WHEAT,
@@ -26,7 +26,7 @@ public class UltimateSeedPacketItem extends SeedPacketItem {
             Blocks.PUMPKIN_STEM
     );
 
-    public UltimateSeedPacketItem(Settings settings) {
+    public ScatterPacketItem(Settings settings) {
         super(Blocks.WHEAT, settings); // cropBlock unused — useOnBlock is overridden
     }
 
