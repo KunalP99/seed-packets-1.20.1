@@ -9,31 +9,44 @@ Seed Packets lets you combine vanilla seeds at a crafting table to create **seed
 ## How it works
 
 1. **Craft a seed packet** using the recipes below — each craft gives you **1 packet with 5 uses**
-2. **Plant the packet** by right-clicking on farmland — each use plants one crop and damages the packet by 1
-3. **Wait for the crop to grow** through 8 stages (stage 0 → stage 7). Bone meal works to speed it up
-4. **Break the fully grown crop** (stage 7) to harvest 1–2 food items
-5. **Eat the food** to restore hunger and gain a timed potion effect
+2. **Plant the packet** by right-clicking on farmland — each use plants one crop
+3. **Check your remaining uses** by hovering over the packet — the tooltip shows "X uses left"
+4. **Wait for the crop to grow** through 8 stages (stage 0 → stage 7). Bone meal works to speed it up
+5. **Break the fully grown crop** (stage 7) to harvest 1–2 food items
+6. **Eat the food** to restore hunger and gain a timed potion effect
 
-> The **durability bar** on the packet shows uses remaining. After 5 plantings the packet breaks and disappears.
 > Breaking a crop before it is fully grown drops **nothing** — wait for stage 7.
+
+---
+
+## Uses & Combining Packets
+
+- Each packet starts with **5 uses**
+- A packet can hold up to **100 uses**
+- **Combine two packets of the same type** in any crafting grid to merge their uses — place both packets anywhere in the grid and take the result
+- If the combined total would exceed 100, the overflow is **discarded** (e.g. a 98-use packet + a 5-use packet = a 100-use packet)
+- The number of uses remaining is always shown in the item tooltip
 
 ---
 
 ## Progression Tiers
 
-There are 3 tiers. Higher tiers use more seed types and give stronger food effects.
+There are 3 custom tiers plus a special Ultimate packet.
 
-| Tier | Seeds combined | Hunger | Effect strength |
-|------|---------------|--------|-----------------|
-| 1 | 2 types | 3–4 | Weak, 8 seconds |
-| 2 | 3 types | 5 | Medium, 12 seconds |
-| 3 | 4 types | 7 | Strong, dual effect |
+| Tier | Packet | Seeds used | Hunger | Effect |
+|------|--------|-----------|--------|--------|
+| 1 | Wheatroot | 2 types | 3 | Speed I (8s) |
+| 1 | Pumpkin Melon | 2 types | 4 | Jump Boost I (8s) |
+| 2 | Harvest | 3 types | 5 | Regeneration I (12s) |
+| 2 | Golden Spud | 3 types | 5 | Strength I (12s) |
+| 3 | Supreme Harvest | 4 types | 7 | Speed II (15s) + Strength I (10s) |
+| — | Ultimate | all 6 vanilla seeds | — | Plants a random vanilla crop |
 
 ---
 
 ## Recipes
 
-All recipes are **shaped** and produce **1 packet with 5 uses**.
+All custom packet recipes produce **1 packet with 5 uses**.
 
 ---
 
@@ -45,8 +58,8 @@ All recipes are **shaped** and produce **1 packet with 5 uses**.
 [Beetroot Seeds][Beetroot Seeds][Beetroot Seeds]
 ```
 - **Grows:** Wheatroot Crop
-- **Harvest:** Wheatroot
-- **Effect:** +3 hunger | Speed I for 8 seconds
+- **Harvest:** Wheatroot (1–2)
+- **Food effect:** +3 hunger | Speed I for 8 seconds
 
 ---
 
@@ -56,8 +69,8 @@ All recipes are **shaped** and produce **1 packet with 5 uses**.
 [ Melon Seeds ][ Melon Seeds ][ Melon Seeds ]
 ```
 - **Grows:** Pumpkin Melon Crop
-- **Harvest:** Pumpkin Melon
-- **Effect:** +4 hunger | Jump Boost I for 8 seconds
+- **Harvest:** Pumpkin Melon (1–2)
+- **Food effect:** +4 hunger | Jump Boost I for 8 seconds
 
 ---
 
@@ -65,13 +78,13 @@ All recipes are **shaped** and produce **1 packet with 5 uses**.
 
 #### Harvest Packet
 ```
-[ Wheat Seeds ][Beetroot Seeds]
-[Beetroot Seeds][    Carrot   ]
-[ Wheat Seeds ][    Carrot   ]
+[Wheat Seeds ][Beetroot Seeds]
+[Beetroot Seeds][   Carrot   ]
+[Wheat Seeds ][   Carrot   ]
 ```
 - **Grows:** Harvest Crop
-- **Harvest:** Harvest Crop (food)
-- **Effect:** +5 hunger | Regeneration I for 12 seconds
+- **Harvest:** Harvest Crop food item (1–2)
+- **Food effect:** +5 hunger | Regeneration I for 12 seconds
 
 ---
 
@@ -82,8 +95,8 @@ All recipes are **shaped** and produce **1 packet with 5 uses**.
 [   Potato   ][   Carrot    ]
 ```
 - **Grows:** Golden Spud Crop
-- **Harvest:** Golden Spud
-- **Effect:** +5 hunger | Strength I for 12 seconds
+- **Harvest:** Golden Spud (1–2)
+- **Food effect:** +5 hunger | Strength I for 12 seconds
 
 ---
 
@@ -91,13 +104,28 @@ All recipes are **shaped** and produce **1 packet with 5 uses**.
 
 #### Supreme Harvest Packet
 ```
-[ Wheat Seeds ][Beetroot Seeds]
+[Wheat Seeds ][Beetroot Seeds]
 [   Carrot   ][   Potato    ]
-[ Wheat Seeds ][Beetroot Seeds]
+[Wheat Seeds ][Beetroot Seeds]
 ```
 - **Grows:** Supreme Harvest Crop
-- **Harvest:** Supreme Harvest
-- **Effect:** +7 hunger | Speed II for 15 seconds + Strength I for 10 seconds
+- **Harvest:** Supreme Harvest (1–2)
+- **Food effect:** +7 hunger | Speed II for 15 seconds + Strength I for 10 seconds
+
+---
+
+### Ultimate
+
+#### Ultimate Seed Packet
+**Shapeless recipe** — place all 6 ingredients anywhere in the crafting grid:
+- Wheat Seeds
+- Melon Seeds
+- Pumpkin Seeds
+- Beetroot Seeds
+- Carrot
+- Potato
+
+Each use plants a **random vanilla crop** on farmland — could be wheat, carrots, potatoes, beetroot, a melon stem, or a pumpkin stem. The planted crop behaves exactly like placing the vanilla seed/crop directly.
 
 ---
 
@@ -117,6 +145,8 @@ All recipes are **shaped** and produce **1 packet with 5 uses**.
 
 - All crops need **farmland** (hoed dirt near water) and **light** to grow, just like vanilla crops
 - **Bone meal** can be used on any seed packet crop to skip growth stages
-- The crops will not drop anything if broken early — patience is rewarded
-- Supreme Harvest is the best food in the mod; save it for tough situations
-- Seed packets can be found in the **Seed Packets** creative tab alongside all food items
+- Crops drop **nothing** if broken early — always wait for stage 7
+- **Combine packets** to stockpile uses — a maxed-out 100-use packet is far more inventory-efficient than 20 separate packets
+- The Ultimate Seed Packet is great for large farms where you don't mind a mix of vanilla crops
+- Supreme Harvest is the strongest food in the mod — save it for combat or tough situations
+- All packets and their food items can be found in the **Seed Packets** creative tab
