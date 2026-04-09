@@ -27,7 +27,7 @@ public class ModItems {
             .statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 160, 0), 1.0f)
             .build();
 
-    private static final FoodComponent PUMPKIN_MELON_FOOD = new FoodComponent.Builder()
+    private static final FoodComponent VINEBLOOM_FOOD = new FoodComponent.Builder()
             .hunger(4).saturationModifier(0.8f)
             .statusEffect(new StatusEffectInstance(StatusEffects.JUMP_BOOST, 160, 0), 1.0f)
             .build();
@@ -53,7 +53,7 @@ public class ModItems {
     // -------------------------------------------------------------------------
 
     public static final Item WHEATROOT = new Item(new Item.Settings().food(WHEATROOT_FOOD));
-    public static final Item PUMPKIN_MELON = new Item(new Item.Settings().food(PUMPKIN_MELON_FOOD));
+    public static final Item VINEBLOOM = new Item(new Item.Settings().food(VINEBLOOM_FOOD));
     public static final Item HARVEST_CROP = new Item(new Item.Settings().food(HARVEST_CROP_FOOD));
     public static final Item GOLDEN_SPUD = new Item(new Item.Settings().food(GOLDEN_SPUD_FOOD));
     public static final Item SUPREME_HARVEST = new Item(new Item.Settings().food(SUPREME_HARVEST_FOOD));
@@ -65,8 +65,8 @@ public class ModItems {
     public static final SeedPacketItem WHEATROOT_PACKET =
             new SeedPacketItem(ModBlocks.WHEATROOT_CROP, new Item.Settings().maxCount(1));
 
-    public static final SeedPacketItem PUMPKIN_MELON_PACKET =
-            new SeedPacketItem(ModBlocks.PUMPKIN_MELON_CROP, new Item.Settings().maxCount(1));
+    public static final SeedPacketItem VINEBLOOM_PACKET =
+            new SeedPacketItem(ModBlocks.VINEBLOOM_CROP, new Item.Settings().maxCount(1));
 
     public static final SeedPacketItem HARVEST_PACKET =
             new SeedPacketItem(ModBlocks.HARVEST_CROP, new Item.Settings().maxCount(1));
@@ -91,14 +91,14 @@ public class ModItems {
     public static void register() {
         // Food items first
         register("wheatroot", WHEATROOT);
-        register("pumpkin_melon", PUMPKIN_MELON);
+        register("vinebloom", VINEBLOOM);
         register("harvest_crop", HARVEST_CROP);
         register("golden_spud", GOLDEN_SPUD);
         register("supreme_harvest", SUPREME_HARVEST);
 
         // Seed packet items
         register("wheatroot_packet", WHEATROOT_PACKET);
-        register("pumpkin_melon_packet", PUMPKIN_MELON_PACKET);
+        register("vinebloom_packet", VINEBLOOM_PACKET);
         register("harvest_packet", HARVEST_PACKET);
         register("golden_spud_packet", GOLDEN_SPUD_PACKET);
         register("supreme_harvest_packet", SUPREME_HARVEST_PACKET);
@@ -114,8 +114,8 @@ public class ModItems {
                             // Tier 1 packets + food
                             entries.add(WHEATROOT_PACKET);
                             entries.add(WHEATROOT);
-                            entries.add(PUMPKIN_MELON_PACKET);
-                            entries.add(PUMPKIN_MELON);
+                            entries.add(VINEBLOOM_PACKET);
+                            entries.add(VINEBLOOM);
                             // Tier 2 packets + food
                             entries.add(HARVEST_PACKET);
                             entries.add(HARVEST_CROP);

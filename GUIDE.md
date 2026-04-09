@@ -36,7 +36,7 @@ There are 3 custom tiers plus a special Scatter Packet.
 | Tier | Packet | Seeds used | Hunger | Effect |
 |------|--------|-----------|--------|--------|
 | 1 | Wheatroot | 2 types | 3 | Speed I (8s) |
-| 1 | Pumpkin Melon | 2 types | 4 | Jump Boost I (8s) |
+| 1 | Vinebloom | 2 types | 4 | Jump Boost I (8s) |
 | 2 | Harvest | 3 types | 5 | Regeneration I (12s) |
 | 2 | Golden Spud | 3 types | 5 | Strength I (12s) |
 | 3 | Supreme Harvest | 4 types | 7 | Speed II (15s) + Strength I (10s) |
@@ -63,13 +63,13 @@ Custom tier 1–3 packet recipes produce **1 packet with 5 uses**. The Scatter P
 
 ---
 
-#### Pumpkin Melon Packet
+#### Vinebloom Packet
 ```
 [Pumpkin Seeds][Pumpkin Seeds][Pumpkin Seeds]
 [ Melon Seeds ][ Melon Seeds ][ Melon Seeds ]
 ```
-- **Grows:** Pumpkin Melon Crop
-- **Harvest:** Pumpkin Melon (1–2)
+- **Grows:** Vinebloom Crop
+- **Harvest:** Vinebloom (1–2)
 - **Food effect:** +4 hunger | Jump Boost I for 8 seconds
 
 ---
@@ -134,7 +134,7 @@ Each use plants a **random vanilla crop** on farmland — could be wheat, carrot
 | Food | Hunger | Effect 1 | Effect 2 |
 |------|--------|----------|----------|
 | Wheatroot | 3 | Speed I (8s) | — |
-| Pumpkin Melon | 4 | Jump Boost I (8s) | — |
+| Vinebloom | 4 | Jump Boost I (8s) | — |
 | Harvest Crop | 5 | Regeneration I (12s) | — |
 | Golden Spud | 5 | Strength I (12s) | — |
 | Supreme Harvest | 7 | Speed II (15s) | Strength I (10s) |

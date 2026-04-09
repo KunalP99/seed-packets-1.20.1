@@ -7,14 +7,14 @@
       "conditions": [
         {
           "condition": "minecraft:block_state_property",
-          "block": "seed-packets:pumpkin_melon_crop",
+          "block": "seed-packets:vinebloom_crop",
           "properties": { "age": "7" }
         }
       ],
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "seed-packets:pumpkin_melon",
+          "name": "seed-packets:vinebloom",
           "functions": [
             {
               "function": "minecraft:set_count",

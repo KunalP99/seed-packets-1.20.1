@@ -2,20 +2,20 @@
   "itemGroup.seed-packets.seed_packets": "Seed Packets",
 
   "item.seed-packets.wheatroot_packet": "Wheatroot Packet",
-  "item.seed-packets.pumpkin_melon_packet": "Pumpkin Melon Packet",
+  "item.seed-packets.vinebloom_packet": "Vinebloom Packet",
   "item.seed-packets.harvest_packet": "Harvest Packet",
   "item.seed-packets.golden_spud_packet": "Golden Spud Packet",
   "item.seed-packets.supreme_harvest_packet": "Supreme Harvest Packet",
   "item.seed-packets.scatter_packet": "Scatter Packet",
 
   "item.seed-packets.wheatroot": "Wheatroot",
-  "item.seed-packets.pumpkin_melon": "Pumpkin Melon",
+  "item.seed-packets.vinebloom": "Vinebloom",
   "item.seed-packets.harvest_crop": "Harvest Crop",
   "item.seed-packets.golden_spud": "Golden Spud",
   "item.seed-packets.supreme_harvest": "Supreme Harvest",
 
   "block.seed-packets.wheatroot_crop": "Wheatroot Crop",
-  "block.seed-packets.pumpkin_melon_crop": "Pumpkin Melon Crop",
+  "block.seed-packets.vinebloom_crop": "Vinebloom Crop",
   "block.seed-packets.harvest_crop": "Harvest Crop",
   "block.seed-packets.golden_spud_crop": "Golden Spud Crop",
   "block.seed-packets.supreme_harvest_crop": "Supreme Harvest Crop"

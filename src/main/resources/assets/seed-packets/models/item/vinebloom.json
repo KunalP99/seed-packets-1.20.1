@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "seed-packets:item/pumpkin_melon"
+    "layer0": "seed-packets:item/vinebloom"
   }
 }

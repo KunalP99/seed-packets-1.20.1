@@ -14,7 +14,7 @@ public class ModBlocks {
     public static final SeedPacketCropBlock WHEATROOT_CROP = new SeedPacketCropBlock(
             FabricBlockSettings.copyOf(Blocks.WHEAT));
 
-    public static final SeedPacketCropBlock PUMPKIN_MELON_CROP = new SeedPacketCropBlock(
+    public static final SeedPacketCropBlock VINEBLOOM_CROP = new SeedPacketCropBlock(
             FabricBlockSettings.copyOf(Blocks.WHEAT));
 
     public static final SeedPacketCropBlock HARVEST_CROP = new SeedPacketCropBlock(
@@ -32,7 +32,7 @@ public class ModBlocks {
 
     public static void register() {
         register("wheatroot_crop", WHEATROOT_CROP);
-        register("pumpkin_melon_crop", PUMPKIN_MELON_CROP);
+        register("vinebloom_crop", VINEBLOOM_CROP);
         register("harvest_crop", HARVEST_CROP);
         register("golden_spud_crop", GOLDEN_SPUD_CROP);
         register("supreme_harvest_crop", SUPREME_HARVEST_CROP);
