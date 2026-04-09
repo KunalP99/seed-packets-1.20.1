@@ -1,5 +1,6 @@
 package com.example.recipe;
 
+import com.example.item.SeedPacketItem;
 import com.example.item.SeedStorageItem;
 import net.minecraft.inventory.RecipeInputInventory;
 import net.minecraft.item.Item;
@@ -27,7 +28,7 @@ public class EmptySeedStorageRecipe extends SpecialCraftingRecipe {
             ItemStack stack = inventory.getStack(i);
             if (stack.isEmpty()) continue;
             if (!(stack.getItem() instanceof SeedStorageItem)) return false;
-            if (!storageStack.isEmpty()) return false; // more than one item
+            if (!storageStack.isEmpty()) return false;
             storageStack = stack;
         }
 
@@ -42,15 +43,24 @@ public class EmptySeedStorageRecipe extends SpecialCraftingRecipe {
 
             String seedType = SeedStorageItem.getStoredSeed(stack);
             int count = SeedStorageItem.getSeedCount(stack);
-            int extracted = Math.min(count, 64);
 
             Item seedItem = Registries.ITEM.get(Identifier.tryParse(seedType));
-            return new ItemStack(seedItem, extracted);
+
+            if (seedItem instanceof SeedPacketItem) {
+                // Return a mod seed packet with uses set
+                int uses = Math.min(count, SeedPacketItem.MAX_USES);
+                ItemStack result = new ItemStack(seedItem, 1);
+                SeedPacketItem.setUses(result, uses);
+                return result;
+            } else {
+                // Return vanilla seeds (up to one stack)
+                return new ItemStack(seedItem, Math.min(count, 64));
+            }
         }
         return ItemStack.EMPTY;
     }
 
-    // Returns the storage packet back to its slot, with remaining seeds (or empty if fully drained).
+    // Returns the storage packet back to its slot with remaining count, or an empty packet if fully drained.
     @Override
     public DefaultedList<ItemStack> getRemainder(RecipeInputInventory inventory) {
         DefaultedList<ItemStack> remainders = DefaultedList.ofSize(inventory.size(), ItemStack.EMPTY);
@@ -59,16 +69,20 @@ public class EmptySeedStorageRecipe extends SpecialCraftingRecipe {
             ItemStack stack = inventory.getStack(i);
             if (stack.isEmpty() || !(stack.getItem() instanceof SeedStorageItem)) continue;
 
+            String seedType = SeedStorageItem.getStoredSeed(stack);
             int count = SeedStorageItem.getSeedCount(stack);
-            int extracted = Math.min(count, 64);
+
+            Item seedItem = Registries.ITEM.get(Identifier.tryParse(seedType));
+            int extracted = (seedItem instanceof SeedPacketItem)
+                    ? Math.min(count, SeedPacketItem.MAX_USES)
+                    : Math.min(count, 64);
             int remaining = count - extracted;
 
             ItemStack remainder = new ItemStack(stack.getItem());
             if (remaining > 0) {
-                SeedStorageItem.setStoredSeed(remainder, SeedStorageItem.getStoredSeed(stack));
+                SeedStorageItem.setStoredSeed(remainder, seedType);
                 SeedStorageItem.setSeedCount(remainder, remaining);
             }
-            // If remaining == 0, the remainder is a clean empty packet (no NBT)
             remainders.set(i, remainder);
         }
 

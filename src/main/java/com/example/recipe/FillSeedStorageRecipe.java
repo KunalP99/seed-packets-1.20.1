@@ -1,5 +1,7 @@
 package com.example.recipe;
 
+import com.example.item.ScatterPacketItem;
+import com.example.item.SeedPacketItem;
 import com.example.item.SeedStorageItem;
 import net.minecraft.inventory.RecipeInputInventory;
 import net.minecraft.item.ItemStack;
@@ -17,6 +19,23 @@ public class FillSeedStorageRecipe extends SpecialCraftingRecipe {
         super(id, category);
     }
 
+    /** Returns true if this item can be deposited into a storage packet. */
+    private static boolean isValidInput(ItemStack stack) {
+        if (stack.getItem() instanceof SeedPacketItem && !(stack.getItem() instanceof ScatterPacketItem)) {
+            return true;
+        }
+        String id = Registries.ITEM.getId(stack.getItem()).toString();
+        return SeedStorageItem.VALID_SEEDS.contains(id);
+    }
+
+    /** How many uses/seeds this stack contributes when consumed (whole mod packet = its uses). */
+    private static int usesContributed(ItemStack stack) {
+        if (stack.getItem() instanceof SeedPacketItem) {
+            return SeedPacketItem.getUses(stack);
+        }
+        return 1; // vanilla seeds: 1 per slot consumed
+    }
+
     @Override
     public boolean matches(RecipeInputInventory inventory, World world) {
         ItemStack storageStack = ItemStack.EMPTY;
@@ -27,26 +46,26 @@ public class FillSeedStorageRecipe extends SpecialCraftingRecipe {
             if (stack.isEmpty()) continue;
 
             if (stack.getItem() instanceof SeedStorageItem) {
-                if (!storageStack.isEmpty()) return false; // more than one storage item
+                if (!storageStack.isEmpty()) return false;
                 storageStack = stack;
             } else {
+                if (!isValidInput(stack)) return false;
                 String id = Registries.ITEM.getId(stack.getItem()).toString();
-                if (!SeedStorageItem.VALID_SEEDS.contains(id)) return false;
                 if (seedType == null) {
                     seedType = id;
                 } else if (!seedType.equals(id)) {
-                    return false; // mixed seed types
+                    return false; // mixed types
                 }
             }
         }
 
         if (storageStack.isEmpty() || seedType == null) return false;
 
-        // If packet already has a seed type, it must match
+        // If already has a type, must match
         String existing = SeedStorageItem.getStoredSeed(storageStack);
         if (existing != null && !existing.isEmpty() && !existing.equals(seedType)) return false;
 
-        // Packet must not be full
+        // Must have room
         int currentCount = SeedStorageItem.getSeedCount(storageStack);
         int capacity = ((SeedStorageItem) storageStack.getItem()).capacity;
         return currentCount < capacity;
@@ -56,7 +75,7 @@ public class FillSeedStorageRecipe extends SpecialCraftingRecipe {
     public ItemStack craft(RecipeInputInventory inventory, DynamicRegistryManager registryManager) {
         ItemStack storageStack = ItemStack.EMPTY;
         String seedType = null;
-        int seedSlots = 0; // 1 seed consumed per slot
+        int usesToAdd = 0;
 
         for (int i = 0; i < inventory.size(); i++) {
             ItemStack stack = inventory.getStack(i);
@@ -65,7 +84,7 @@ public class FillSeedStorageRecipe extends SpecialCraftingRecipe {
                 storageStack = stack;
             } else {
                 seedType = Registries.ITEM.getId(stack.getItem()).toString();
-                seedSlots++;
+                usesToAdd += usesContributed(stack);
             }
         }
 
@@ -74,9 +93,8 @@ public class FillSeedStorageRecipe extends SpecialCraftingRecipe {
         ItemStack result = storageStack.copy();
         int capacity = ((SeedStorageItem) result.getItem()).capacity;
         int currentCount = SeedStorageItem.getSeedCount(result);
-        int newCount = Math.min(currentCount + seedSlots, capacity);
         SeedStorageItem.setStoredSeed(result, seedType);
-        SeedStorageItem.setSeedCount(result, newCount);
+        SeedStorageItem.setSeedCount(result, Math.min(currentCount + usesToAdd, capacity));
         return result;
     }
 

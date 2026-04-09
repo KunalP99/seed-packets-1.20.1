@@ -161,16 +161,23 @@ S   S    P = Paper, S = String
 P S P
 ```
 
-### Accepted seeds
-Wheat Seeds, Beetroot Seeds, Pumpkin Seeds, Melon Seeds, Carrot, Potato.
+### Accepted inputs
+- **Vanilla seeds**: Wheat Seeds, Beetroot Seeds, Pumpkin Seeds, Melon Seeds, Carrot, Potato
+- **Mod seed packets**: Wheatroot, Vinebloom, Harvest, Golden Spud, and Supreme Harvest packets — the stored count represents total uses
 
 ### Filling
-Place the storage packet + any number of same-type seeds in the crafting grid. Each seed slot adds 1 seed to the packet per craft. The packet appears in the output slot with an updated count.
+Place the storage packet + same-type seeds (or mod packets) in the crafting grid.
+- Vanilla seeds: each seed slot adds 1 to the count per craft
+- Mod packets: each packet adds all of its current uses at once (the whole packet is consumed)
 
-If the packet already contains seeds, you can only add the same type.
+If the packet already contains something, you can only add the same type. Type mismatch = no recipe result.
 
 ### Emptying
-Place the storage packet alone in the crafting grid. Up to 64 seeds are returned to the output slot; the packet (with any remaining seeds) comes back as a remainder. Repeat to fully empty it.
+Place the storage packet alone in the crafting grid.
+- Vanilla seeds: up to 64 are returned per craft; remainder stays in the packet
+- Mod packets: one packet is returned with up to 64 uses; remainder stays in the packet
+
+Repeat until fully empty.
 
 ### Tooltip
 Hovering over a storage packet shows: `Seed Name: N / Capacity` (or `Empty` if nothing is stored).
