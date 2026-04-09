@@ -8,6 +8,9 @@ import com.example.registry.ModItems;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.minecraft.item.ItemStack;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
+import net.minecraft.text.Text;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -41,7 +44,11 @@ public class SeedPackets implements ModInitializer {
 			for (int i = 0; i < inventory.size(); i++) {
 				ItemStack slot = inventory.getStack(i);
 				if (slot.isOf(packetItem) && SeedPacketItem.getUses(slot) < SeedPacketItem.MAX_USES) {
-					SeedPacketItem.setUses(slot, Math.min(SeedPacketItem.getUses(slot) + 1, SeedPacketItem.MAX_USES));
+					int newTotal = Math.min(SeedPacketItem.getUses(slot) + 1, SeedPacketItem.MAX_USES);
+					SeedPacketItem.setUses(slot, newTotal);
+					player.sendMessage(Text.literal("").append(packetItem.getName()).append(Text.literal(": " + newTotal + " uses")), true);
+					world.playSound(null, player.getX(), player.getY(), player.getZ(),
+							SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.PLAYERS, 0.3f, 1.2f);
 					return;
 				}
 			}
@@ -51,6 +58,10 @@ public class SeedPackets implements ModInitializer {
 			SeedPacketItem.setUses(newPacket, 1);
 			if (!inventory.insertStack(newPacket)) {
 				player.dropItem(newPacket, false);
+			} else {
+				player.sendMessage(Text.literal("Seed returned: ").append(packetItem.getName()).append(Text.literal(" (1 use)")), true);
+				world.playSound(null, player.getX(), player.getY(), player.getZ(),
+						SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.PLAYERS, 0.3f, 1.2f);
 			}
 		});
 
