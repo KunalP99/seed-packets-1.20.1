@@ -1,0 +1,1 @@
+{ "parent": "minecraft:block/crop", "textures": { "crop": "seed-packets:block/vinebloom_stem_stage7" } }

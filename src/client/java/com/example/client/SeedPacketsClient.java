@@ -10,7 +10,8 @@ public class SeedPacketsClient implements ClientModInitializer {
 	public void onInitializeClient() {
 		BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(),
 				ModBlocks.WHEATROOT_CROP,
-				ModBlocks.VINEBLOOM_CROP,
+				ModBlocks.VINEBLOOM_STEM,
+				ModBlocks.ATTACHED_VINEBLOOM_STEM,
 				ModBlocks.HARVEST_CROP,
 				ModBlocks.GOLDEN_SPUD_CROP,
 				ModBlocks.SUPREME_HARVEST_CROP

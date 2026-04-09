@@ -67,7 +67,7 @@ public class ModItems {
             new SeedPacketItem(ModBlocks.WHEATROOT_CROP, new Item.Settings().maxCount(1));
 
     public static final SeedPacketItem VINEBLOOM_PACKET =
-            new SeedPacketItem(ModBlocks.VINEBLOOM_CROP, new Item.Settings().maxCount(1));
+            new SeedPacketItem(ModBlocks.VINEBLOOM_STEM, new Item.Settings().maxCount(1));
 
     public static final SeedPacketItem HARVEST_PACKET =
             new SeedPacketItem(ModBlocks.HARVEST_CROP, new Item.Settings().maxCount(1));

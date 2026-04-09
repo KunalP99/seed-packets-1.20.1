@@ -4,13 +4,6 @@
     {
       "rolls": 1,
       "bonus_rolls": 0,
-      "conditions": [
-        {
-          "condition": "minecraft:block_state_property",
-          "block": "seed-packets:vinebloom_crop",
-          "properties": { "age": "7" }
-        }
-      ],
       "entries": [
         {
           "type": "minecraft:item",

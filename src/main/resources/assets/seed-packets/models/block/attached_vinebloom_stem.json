@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/attached_stem",
+  "textures": {
+    "stem": "seed-packets:block/vinebloom_stem_stage7",
+    "upper_stem": "seed-packets:block/vinebloom_stem_stage7"
+  }
+}

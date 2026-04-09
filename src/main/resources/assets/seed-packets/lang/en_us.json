@@ -20,7 +20,9 @@
   "item.seed-packets.supreme_storage_packet": "Supreme Storage Packet",
 
   "block.seed-packets.wheatroot_crop": "Wheatroot Crop",
-  "block.seed-packets.vinebloom_crop": "Vinebloom Crop",
+  "block.seed-packets.vinebloom_stem": "Vinebloom Stem",
+  "block.seed-packets.attached_vinebloom_stem": "Vinebloom Stem",
+  "block.seed-packets.vinebloom_fruit": "Vinebloom",
   "block.seed-packets.harvest_crop": "Harvest Crop",
   "block.seed-packets.golden_spud_crop": "Golden Spud Crop",
   "block.seed-packets.supreme_harvest_crop": "Supreme Harvest Crop"

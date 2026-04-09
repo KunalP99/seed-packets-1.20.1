@@ -1,6 +1,8 @@
 package com.example;
 
+import com.example.block.AttachedVinebloomStemBlock;
 import com.example.block.SeedPacketCropBlock;
+import com.example.block.VinebloomStemBlock;
 import com.example.item.SeedPacketItem;
 import com.example.recipe.ModRecipes;
 import com.example.registry.ModBlocks;
@@ -27,7 +29,6 @@ public class SeedPackets implements ModInitializer {
 		// Wire packet items into crop blocks for the 1-use seed drop on harvest.
 		// Done here (after both registries init) to avoid circular static init.
 		ModBlocks.WHEATROOT_CROP.setPacketItem(ModItems.WHEATROOT_PACKET);
-		ModBlocks.VINEBLOOM_CROP.setPacketItem(ModItems.VINEBLOOM_PACKET);
 		ModBlocks.HARVEST_CROP.setPacketItem(ModItems.HARVEST_PACKET);
 		ModBlocks.GOLDEN_SPUD_CROP.setPacketItem(ModItems.GOLDEN_SPUD_PACKET);
 		ModBlocks.SUPREME_HARVEST_CROP.setPacketItem(ModItems.SUPREME_HARVEST_PACKET);
@@ -63,6 +64,38 @@ public class SeedPackets implements ModInitializer {
 			} else {
 				String usesLabel = returned == 1 ? "1 use" : returned + " uses";
 				player.sendMessage(Text.literal("Seed returned: ").append(packetItem.getName()).append(Text.literal(" (" + usesLabel + ")")), true);
+				world.playSound(null, player.getX(), player.getY(), player.getZ(),
+						SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.PLAYERS, 0.3f, 1.2f);
+			}
+		});
+
+		// When a vinebloom stem (or attached stem) is broken, return exactly 1 use to the packet.
+		// Vinebloom never returns uses from the fruit — only from uprooting the stem.
+		PlayerBlockBreakEvents.AFTER.register((world, player, pos, state, blockEntity) -> {
+			if (world.isClient) return;
+			if (!(state.getBlock() instanceof VinebloomStemBlock)
+					&& !(state.getBlock() instanceof AttachedVinebloomStemBlock)) return;
+
+			SeedPacketItem packetItem = ModItems.VINEBLOOM_PACKET;
+			var inventory = player.getInventory();
+			for (int i = 0; i < inventory.size(); i++) {
+				ItemStack slot = inventory.getStack(i);
+				if (slot.isOf(packetItem) && SeedPacketItem.getUses(slot) < SeedPacketItem.MAX_USES) {
+					int newTotal = Math.min(SeedPacketItem.getUses(slot) + 1, SeedPacketItem.MAX_USES);
+					SeedPacketItem.setUses(slot, newTotal);
+					player.sendMessage(Text.literal("").append(packetItem.getName()).append(Text.literal(": " + newTotal + " uses")), true);
+					world.playSound(null, player.getX(), player.getY(), player.getZ(),
+							SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.PLAYERS, 0.3f, 1.2f);
+					return;
+				}
+			}
+			// No existing packet with room — give a fresh 1-use packet or drop it.
+			ItemStack newPacket = new ItemStack(packetItem);
+			SeedPacketItem.setUses(newPacket, 1);
+			if (!inventory.insertStack(newPacket)) {
+				player.dropItem(newPacket, false);
+			} else {
+				player.sendMessage(Text.literal("Seed returned: ").append(packetItem.getName()).append(Text.literal(" (1 use)")), true);
 				world.playSound(null, player.getX(), player.getY(), player.getZ(),
 						SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.PLAYERS, 0.3f, 1.2f);
 			}

@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "seed-packets:block/attached_vinebloom_stem", "y": 270 },
+    "facing=east":  { "model": "seed-packets:block/attached_vinebloom_stem" },
+    "facing=south": { "model": "seed-packets:block/attached_vinebloom_stem", "y": 90 },
+    "facing=west":  { "model": "seed-packets:block/attached_vinebloom_stem", "y": 180 }
+  }
+}
