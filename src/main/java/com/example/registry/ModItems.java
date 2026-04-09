@@ -2,6 +2,7 @@ package com.example.registry;
 
 import com.example.SeedPackets;
 import com.example.item.SeedPacketItem;
+import com.example.item.UltimateSeedPacketItem;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -76,6 +77,9 @@ public class ModItems {
     public static final SeedPacketItem SUPREME_HARVEST_PACKET =
             new SeedPacketItem(ModBlocks.SUPREME_HARVEST_CROP, new Item.Settings().maxCount(1));
 
+    public static final UltimateSeedPacketItem ULTIMATE_PACKET =
+            new UltimateSeedPacketItem(new Item.Settings().maxCount(1));
+
     // -------------------------------------------------------------------------
     // Registration
     // -------------------------------------------------------------------------
@@ -98,6 +102,7 @@ public class ModItems {
         register("harvest_packet", HARVEST_PACKET);
         register("golden_spud_packet", GOLDEN_SPUD_PACKET);
         register("supreme_harvest_packet", SUPREME_HARVEST_PACKET);
+        register("ultimate_packet", ULTIMATE_PACKET);
 
         // Custom creative tab
         Registry.register(Registries.ITEM_GROUP,
@@ -119,6 +124,8 @@ public class ModItems {
                             // Tier 3 packet + food
                             entries.add(SUPREME_HARVEST_PACKET);
                             entries.add(SUPREME_HARVEST);
+                            // Ultimate packet
+                            entries.add(ULTIMATE_PACKET);
                         })
                         .build());
     }

@@ -20,7 +20,7 @@ A **Fabric mod** for **Minecraft 1.20.1** called "Seed Packets". Currently based
 | Java            | 17              |
 | Gradle          | 9.3.0 (wrapper) |
 
-Mappings: **Official Mojang mappings** (via `loom.officialMojangMappings()`)
+Mappings: **Yarn mappings** (`net.fabricmc:yarn:1_20_1.1.20.1+build.10:v2`)
 
 ## Project Structure
 
