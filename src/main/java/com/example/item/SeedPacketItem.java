@@ -54,20 +54,7 @@ public class SeedPacketItem extends Item {
 
     @Override
     public boolean isItemBarVisible(ItemStack stack) {
-        return true;
-    }
-
-    @Override
-    public int getItemBarStep(ItemStack stack) {
-        return Math.round(13.0f * getUses(stack) / MAX_USES);
-    }
-
-    @Override
-    public int getItemBarColor(ItemStack stack) {
-        float fraction = (float) getUses(stack) / MAX_USES;
-        int r = Math.round(255 * (1.0f - fraction));
-        int g = Math.round(255 * fraction);
-        return (r << 16) | (g << 8);
+        return false;
     }
 
     @Override
