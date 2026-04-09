@@ -88,15 +88,6 @@ public class ModItems {
     public static final SeedStorageItem EMPTY_STORAGE_PACKET =
             new SeedStorageItem(100, new Item.Settings().maxCount(1));
 
-    public static final SeedStorageItem REINFORCED_STORAGE_PACKET =
-            new SeedStorageItem(200, new Item.Settings().maxCount(1));
-
-    public static final SeedStorageItem FORTIFIED_STORAGE_PACKET =
-            new SeedStorageItem(300, new Item.Settings().maxCount(1));
-
-    public static final SeedStorageItem SUPREME_STORAGE_PACKET =
-            new SeedStorageItem(500, new Item.Settings().maxCount(1));
-
     // -------------------------------------------------------------------------
     // Registration
     // -------------------------------------------------------------------------
@@ -121,11 +112,8 @@ public class ModItems {
         register("supreme_harvest_packet", SUPREME_HARVEST_PACKET);
         register("scatter_packet", SCATTER_PACKET);
 
-        // Seed storage packets
+        // Seed storage packet
         register("empty_storage_packet", EMPTY_STORAGE_PACKET);
-        register("reinforced_storage_packet", REINFORCED_STORAGE_PACKET);
-        register("fortified_storage_packet", FORTIFIED_STORAGE_PACKET);
-        register("supreme_storage_packet", SUPREME_STORAGE_PACKET);
 
         // Custom creative tab
         Registry.register(Registries.ITEM_GROUP,
@@ -149,11 +137,8 @@ public class ModItems {
                             entries.add(SUPREME_HARVEST);
                             // Scatter packet
                             entries.add(SCATTER_PACKET);
-                            // Seed storage packets
+                            // Seed storage packet
                             entries.add(EMPTY_STORAGE_PACKET);
-                            entries.add(REINFORCED_STORAGE_PACKET);
-                            entries.add(FORTIFIED_STORAGE_PACKET);
-                            entries.add(SUPREME_STORAGE_PACKET);
                         })
                         .build());
     }

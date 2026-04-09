@@ -151,20 +151,12 @@ Each use plants a **random vanilla crop** on farmland — could be wheat, carrot
 
 ---
 
-## Seed Storage Packets
+## Seed Storage Packet
 
-Store large quantities of vanilla seeds in a single inventory slot.
+Store large quantities of vanilla seeds in a single inventory slot. Holds up to **100 seeds**.
 
-### Tiers
+### Craft
 
-| Item | Capacity | Recipe |
-|---|---|---|
-| Empty Storage Packet | 100 seeds | Paper + String (see below) |
-| Reinforced Storage Packet | 200 seeds | Surround Empty with 8 iron ingots |
-| Fortified Storage Packet | 300 seeds | Surround Reinforced with 8 gold ingots |
-| Supreme Storage Packet | 500 seeds | Surround Fortified with 8 diamonds |
-
-Base craft:
 ```
 P S P
 S   S    P = Paper, S = String
