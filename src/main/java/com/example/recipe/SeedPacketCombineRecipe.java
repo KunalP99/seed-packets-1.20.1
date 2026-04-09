@@ -2,6 +2,7 @@ package com.example.recipe;
 
 import com.example.item.SeedPacketItem;
 import net.minecraft.inventory.RecipeInputInventory;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.SpecialCraftingRecipe;
@@ -9,6 +10,8 @@ import net.minecraft.recipe.book.CraftingRecipeCategory;
 import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SeedPacketCombineRecipe extends SpecialCraftingRecipe {
 
@@ -18,51 +21,34 @@ public class SeedPacketCombineRecipe extends SpecialCraftingRecipe {
 
     @Override
     public boolean matches(RecipeInputInventory inventory, World world) {
-        ItemStack first = ItemStack.EMPTY;
-        ItemStack second = ItemStack.EMPTY;
-
+        List<ItemStack> found = new ArrayList<>();
         for (int i = 0; i < inventory.size(); i++) {
             ItemStack stack = inventory.getStack(i);
             if (stack.isEmpty()) continue;
             if (!(stack.getItem() instanceof SeedPacketItem)) return false;
-
-            if (first.isEmpty()) {
-                first = stack;
-            } else if (second.isEmpty()) {
-                second = stack;
-            } else {
-                return false; // More than 2 non-empty slots
-            }
+            found.add(stack);
         }
-
-        return !first.isEmpty() && !second.isEmpty() && first.isOf(second.getItem());
+        if (found.size() < 2) return false;
+        Item type = found.get(0).getItem();
+        for (ItemStack stack : found) {
+            if (!stack.isOf(type)) return false;
+        }
+        return true;
     }
 
     @Override
     public ItemStack craft(RecipeInputInventory inventory, DynamicRegistryManager registryManager) {
         ItemStack first = ItemStack.EMPTY;
-        ItemStack second = ItemStack.EMPTY;
-
+        int totalUses = 0;
         for (int i = 0; i < inventory.size(); i++) {
             ItemStack stack = inventory.getStack(i);
             if (stack.isEmpty()) continue;
-            if (first.isEmpty()) {
-                first = stack;
-            } else {
-                second = stack;
-                break;
-            }
+            if (first.isEmpty()) first = stack;
+            totalUses += SeedPacketItem.getUses(stack);
         }
-
-        if (first.isEmpty() || second.isEmpty()) return ItemStack.EMPTY;
-
-        int combined = Math.min(
-                SeedPacketItem.getUses(first) + SeedPacketItem.getUses(second),
-                SeedPacketItem.MAX_USES
-        );
-
+        if (first.isEmpty()) return ItemStack.EMPTY;
         ItemStack result = new ItemStack(first.getItem());
-        SeedPacketItem.setUses(result, combined);
+        SeedPacketItem.setUses(result, Math.min(totalUses, SeedPacketItem.MAX_USES));
         return result;
     }
 
