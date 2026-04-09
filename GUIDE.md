@@ -35,11 +35,11 @@ There are 3 custom tiers plus a special Scatter Packet.
 
 | Tier | Packet | Seeds used | Hunger | Effect |
 |------|--------|-----------|--------|--------|
-| 1 | Wheatroot | 2 types | 4 | Speed I (30s) |
-| 1 | Vinebloom | 2 types | 5 | Jump Boost I (30s) |
-| 2 | Harvest | 3 types | 6 | Regeneration II (20s) |
-| 2 | Golden Spud | 3 types | 6 | Strength I (45s) |
-| 3 | Supreme Harvest | 4 types | 8 | Speed II (60s) + Strength II (45s) |
+| 1 | Wheatroot | 2 types | 3 | Speed I (10s) |
+| 1 | Vinebloom | 2 types | 4 | Jump Boost I (12s) |
+| 2 | Harvest | 3 types | 5 | Regeneration I (8s) |
+| 2 | Golden Spud | 3 types | 5 | Strength I (15s) |
+| 3 | Supreme Harvest | 4 types | 7 | Speed I (20s) + Strength I (20s) |
 | — | Scatter | all 6 vanilla seeds | — | Plants a random vanilla crop |
 
 ---
@@ -59,7 +59,7 @@ Custom tier 1–3 packet recipes produce **1 packet with 5 uses**. The Scatter P
 ```
 - **Grows:** Wheatroot Crop
 - **Harvest:** Wheatroot (1–2)
-- **Food effect:** +4 hunger | Speed I for 30 seconds
+- **Food effect:** +3 hunger | Speed I for 10 seconds
 
 ---
 
@@ -70,7 +70,7 @@ Custom tier 1–3 packet recipes produce **1 packet with 5 uses**. The Scatter P
 ```
 - **Grows:** Vinebloom Crop
 - **Harvest:** Vinebloom (1–2)
-- **Food effect:** +5 hunger | Jump Boost I for 30 seconds
+- **Food effect:** +4 hunger | Jump Boost I for 12 seconds
 
 ---
 
@@ -84,7 +84,7 @@ Custom tier 1–3 packet recipes produce **1 packet with 5 uses**. The Scatter P
 ```
 - **Grows:** Harvest Crop
 - **Harvest:** Harvest Crop food item (1–2)
-- **Food effect:** +6 hunger | Regeneration II for 20 seconds
+- **Food effect:** +5 hunger | Regeneration I for 8 seconds
 
 ---
 
@@ -96,7 +96,7 @@ Custom tier 1–3 packet recipes produce **1 packet with 5 uses**. The Scatter P
 ```
 - **Grows:** Golden Spud Crop
 - **Harvest:** Golden Spud (1–2)
-- **Food effect:** +6 hunger | Strength I for 45 seconds
+- **Food effect:** +5 hunger | Strength I for 15 seconds
 
 ---
 
@@ -110,7 +110,7 @@ Custom tier 1–3 packet recipes produce **1 packet with 5 uses**. The Scatter P
 ```
 - **Grows:** Supreme Harvest Crop
 - **Harvest:** Supreme Harvest (1–2)
-- **Food effect:** +8 hunger | Speed II for 60 seconds + Strength II for 45 seconds
+- **Food effect:** +7 hunger | Speed I for 20 seconds + Strength I for 20 seconds
 
 ---
 
@@ -133,11 +133,11 @@ Each use plants a **random vanilla crop** on farmland — could be wheat, carrot
 
 | Food | Hunger | Effect 1 | Effect 2 |
 |------|--------|----------|----------|
-| Wheatroot | 4 | Speed I (30s) | — |
-| Vinebloom | 5 | Jump Boost I (30s) | — |
-| Harvest Crop | 6 | Regeneration II (20s) | — |
-| Golden Spud | 6 | Strength I (45s) | — |
-| Supreme Harvest | 8 | Speed II (60s) | Strength II (45s) |
+| Wheatroot | 3 | Speed I (10s) | — |
+| Vinebloom | 4 | Jump Boost I (12s) | — |
+| Harvest Crop | 5 | Regeneration I (8s) | — |
+| Golden Spud | 5 | Strength I (15s) | — |
+| Supreme Harvest | 7 | Speed I (20s) | Strength I (20s) |
 
 ---
 

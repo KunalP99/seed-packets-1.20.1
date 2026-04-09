@@ -23,29 +23,29 @@ public class ModItems {
     // -------------------------------------------------------------------------
 
     private static final FoodComponent WHEATROOT_FOOD = new FoodComponent.Builder()
-            .hunger(4).saturationModifier(0.6f)
-            .statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 600, 0), 1.0f)
+            .hunger(3).saturationModifier(0.4f)
+            .statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 200, 0), 1.0f)
             .build();
 
     private static final FoodComponent VINEBLOOM_FOOD = new FoodComponent.Builder()
-            .hunger(5).saturationModifier(0.8f)
-            .statusEffect(new StatusEffectInstance(StatusEffects.JUMP_BOOST, 600, 0), 1.0f)
+            .hunger(4).saturationModifier(0.6f)
+            .statusEffect(new StatusEffectInstance(StatusEffects.JUMP_BOOST, 240, 0), 1.0f)
             .build();
 
     private static final FoodComponent HARVEST_CROP_FOOD = new FoodComponent.Builder()
-            .hunger(6).saturationModifier(1.2f)
-            .statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 400, 1), 1.0f)
+            .hunger(5).saturationModifier(0.8f)
+            .statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 160, 0), 1.0f)
             .build();
 
     private static final FoodComponent GOLDEN_SPUD_FOOD = new FoodComponent.Builder()
-            .hunger(6).saturationModifier(1.2f)
-            .statusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 900, 0), 1.0f)
+            .hunger(5).saturationModifier(0.8f)
+            .statusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 300, 0), 1.0f)
             .build();
 
     private static final FoodComponent SUPREME_HARVEST_FOOD = new FoodComponent.Builder()
-            .hunger(8).saturationModifier(1.8f)
-            .statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 1200, 1), 1.0f)
-            .statusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 900, 1), 1.0f)
+            .hunger(7).saturationModifier(1.2f)
+            .statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 400, 0), 1.0f)
+            .statusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 400, 0), 1.0f)
             .build();
 
     // -------------------------------------------------------------------------
