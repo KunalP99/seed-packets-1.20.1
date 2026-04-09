@@ -1,6 +1,19 @@
 {
-  "parent": "minecraft:item/generated",
+  "parent": "minecraft:item/handheld",
   "textures": {
     "layer0": "seed-packets:item/supreme_storage_packet"
-  }
+  },
+  "overrides": [
+    { "predicate": { "custom_model_data":  1 }, "model": "seed-packets:item/supreme_storage_packet_wheat_seeds" },
+    { "predicate": { "custom_model_data":  2 }, "model": "seed-packets:item/supreme_storage_packet_beetroot_seeds" },
+    { "predicate": { "custom_model_data":  3 }, "model": "seed-packets:item/supreme_storage_packet_pumpkin_seeds" },
+    { "predicate": { "custom_model_data":  4 }, "model": "seed-packets:item/supreme_storage_packet_melon_seeds" },
+    { "predicate": { "custom_model_data":  5 }, "model": "seed-packets:item/supreme_storage_packet_carrot" },
+    { "predicate": { "custom_model_data":  6 }, "model": "seed-packets:item/supreme_storage_packet_potato" },
+    { "predicate": { "custom_model_data":  7 }, "model": "seed-packets:item/supreme_storage_packet_wheatroot_packet" },
+    { "predicate": { "custom_model_data":  8 }, "model": "seed-packets:item/supreme_storage_packet_vinebloom_packet" },
+    { "predicate": { "custom_model_data":  9 }, "model": "seed-packets:item/supreme_storage_packet_harvest_packet" },
+    { "predicate": { "custom_model_data": 10 }, "model": "seed-packets:item/supreme_storage_packet_golden_spud_packet" },
+    { "predicate": { "custom_model_data": 11 }, "model": "seed-packets:item/supreme_storage_packet_supreme_harvest_packet" }
+  ]
 }

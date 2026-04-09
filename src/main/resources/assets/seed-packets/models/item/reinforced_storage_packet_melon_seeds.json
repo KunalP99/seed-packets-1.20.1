@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "seed-packets:item/reinforced_storage_packet_melon_seeds"
+  }
+}

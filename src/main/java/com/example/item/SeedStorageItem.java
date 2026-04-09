@@ -26,6 +26,22 @@ public class SeedStorageItem extends Item {
             "minecraft:potato"
     );
 
+    // Maps stored seed ID → CustomModelData value used by item model overrides.
+    // 0 (unset) = empty packet texture. Values 1-11 = filled variants.
+    public static final java.util.Map<String, Integer> SEED_MODEL_DATA = java.util.Map.ofEntries(
+            java.util.Map.entry("minecraft:wheat_seeds",                    1),
+            java.util.Map.entry("minecraft:beetroot_seeds",                 2),
+            java.util.Map.entry("minecraft:pumpkin_seeds",                  3),
+            java.util.Map.entry("minecraft:melon_seeds",                    4),
+            java.util.Map.entry("minecraft:carrot",                         5),
+            java.util.Map.entry("minecraft:potato",                         6),
+            java.util.Map.entry("seed-packets:wheatroot_packet",            7),
+            java.util.Map.entry("seed-packets:vinebloom_packet",            8),
+            java.util.Map.entry("seed-packets:harvest_packet",              9),
+            java.util.Map.entry("seed-packets:golden_spud_packet",         10),
+            java.util.Map.entry("seed-packets:supreme_harvest_packet",     11)
+    );
+
     private static final String SEED_TYPE_KEY = "StoredSeed";
     private static final String SEED_COUNT_KEY = "SeedCount";
 
@@ -46,6 +62,8 @@ public class SeedStorageItem extends Item {
 
     public static void setStoredSeed(ItemStack stack, String seedId) {
         stack.getOrCreateNbt().putString(SEED_TYPE_KEY, seedId);
+        int modelData = (seedId != null) ? SEED_MODEL_DATA.getOrDefault(seedId, 0) : 0;
+        stack.getOrCreateNbt().putInt("CustomModelData", modelData);
     }
 
     public static int getSeedCount(ItemStack stack) {
